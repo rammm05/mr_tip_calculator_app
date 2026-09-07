@@ -244,6 +244,7 @@ class MrTipCalcState extends State<MrTipCalc>{
                   children: [
                     InkWell(
                       onTap: (){
+                        tipController.clear();
                         selectedTipPercentage = enteredBill*0.10;
                         tipSelected == 1 ? tipSelected =0 : tipSelected =1;
                         calcFunc();
@@ -271,6 +272,7 @@ class MrTipCalcState extends State<MrTipCalc>{
                     ),
                     InkWell(
                       onTap: (){
+                        tipController.clear();
                         selectedTipPercentage = enteredBill*0.15;
                         tipSelected == 2 ? tipSelected =0 : tipSelected =2;
                         calcFunc();
@@ -298,6 +300,7 @@ class MrTipCalcState extends State<MrTipCalc>{
                     ),
                     InkWell(
                       onTap: (){
+                        tipController.clear();
                         selectedTipPercentage = enteredBill*0.20;
                         tipSelected == 3 ? tipSelected =0 : tipSelected =3;
                         calcFunc();
@@ -327,8 +330,13 @@ class MrTipCalcState extends State<MrTipCalc>{
                 ),
                 SizedBox(height: 10),
                 TextField(
+                  onTap: (){
+                    tipSelected == 4 ? tipSelected =0 : tipSelected =4;
+                    setState(() {
+
+                    });
+                  },
                   onSubmitted: (value){
-                    tipSelected = 4;
                     setState(() {
 
                     });
